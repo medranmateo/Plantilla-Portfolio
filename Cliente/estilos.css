@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 header{
     height: 65px;
@@ -15,18 +16,21 @@ header{
     height: 200px;
 }
 .uno{
+    position: relative;
     width: 100%;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
-    background-color: #303030;
+    background-color: #000;
     color: white;
     /* padding-top: 10%; */
 }
 .caja-central{
     margin-top: 10%;
     width: 50%;
+    z-index: 100;
     display: flex;
     flex-direction: row;
     border-radius: 20px;
@@ -45,19 +49,19 @@ header{
     justify-content: center;
     align-items: center;
     width: 60%;
-    background-color: #F2F2F2;
-    color: #303030;
+    background-color: #150050;
+    color: #F2F2F2;
     padding: 10px;
 }
 
 .dos{
-    background-color: #F2F2F2;
-    height: 700px;
+    background-color: #3F0071;
+    /* height: 700px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #303030;
+    color: #F2F2F2;
     padding-left: 20%;
     padding-right: 20%;
 }
@@ -75,7 +79,7 @@ header{
 }
 
 .tres{
-    background-color: #303030;
+    background-color: #150050;
     height: 600px;
     display: flex;
     justify-content: flex-start;
@@ -112,12 +116,12 @@ header{
 
 .red-social{
     height: 60px;
-    background-color: #F2F2F2;
+    background-color: transparent;
     border-radius: 10px;
 }
 
 footer{
-    background-color: #424242;
+    background-color: #000000;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -171,4 +175,42 @@ footer{
     .red-social{
         margin: 0 10px 0 10px;
     }
+}
+
+
+i {
+    position: absolute;
+    height: 100px;
+    background: linear-gradient(transparent, #fff);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation: animate 5s linear infinite ;
+}
+
+i:nth-child(3n + 1){
+    background: linear-gradient(transparent, #0ff);
+}
+
+i:nth-child(3n + 2){
+    background: linear-gradient(transparent, #0f0);
+}
+
+i:nth-child(3n + 3){
+    background: linear-gradient(transparent, #f00);
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(-200px);
+    }
+    100%{
+        transform: translateY( calc(100vh + 200px) );
+    }
+}
+
+
+.efecto-lluvia{
+    position: relative;
+    height: 100%;
+    z-index: 10;
 }
